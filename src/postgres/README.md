@@ -6,15 +6,15 @@ Postgres chapters in our text.
 
 ## Starting and connecting to the Postgres server
 
-1. Open your personal repository in GitPod.
+1. Open your personal repository.
 
-2. Reposition GitPod's terminal to the postgres directory
+2. In the terminal, navigate to the postgres directory:
 
     ```bash
     cd postgres
     ```
 
-3. Start the Postgres server
+3. Start the Postgres server (this may take a minute or two the first time)
 
     ```bash
     ./up.bash
@@ -28,8 +28,38 @@ Postgres chapters in our text.
 
 Your prompt should be `7dbs=# `.
 
-Turn to page 11 in your text and continue ***AFTER*** `$ psql 7dbs`.
+5. Create a table called 'trees' using the code below. You must use the exact upper or lower case and the exact punctuation.
+```
+CREATE TABLE trees (
+  tree_name varchar(30) PRIMARY KEY, 
+  height_range varchar(20)
+);
+```
 
+6. Check to see if you have correctly created the table:
+```
+SELECT * FROM trees;
+```
+You should see somthing like: 
+```
+ tree_name | height_range 
+-----------+--------------
+(0 rows)
+```
+
+7. Add two trees to the database:
+```
+INSERT INTO trees (tree_name, height_range)
+VALUES ('Red Maple','40-60 ft'), ('Douglas Fir', '70-300 ft');
+```
+
+9. Check to ensure that the two trees have been added:
+```
+SELECT * FROM trees;
+```
+10. Add two two trees of your choice to the database.
+11. Display the ```tree``` to ensure that you have correctly added your two trees. 
+    
 When you are done interacting with the Postgres server, type `exit` or `\q`
 to return to the bash prompt. This does not stop the server, it just
 disconnects you from the server. You can reconnect by running `./shell.bash`
@@ -41,10 +71,10 @@ Assuming your Postgres server is running, and your terminal is still
 positioned in the `postgres/` directory, run the following...
 
 ```bash
-./save.bash data.sql
+./save.bash trees.sql
 ```
 
-This dumps the database into a file named `data.sql`.
+This dumps the database into a file named `trees.sql`.
 
 ## Stopping and delete the Postgres server
 
@@ -60,17 +90,15 @@ in `data.sql`, you can restore the currently empty
 server to this state as follows.
 
 ```bash
-./load.bash data.sql
+./load.bash trees.sql
 ```
 
 ## Best Practice
 
 Postgres is saving your data inside a Docker container (a virtual machine)
-inside GitPod (a virtual machine). There is no telling what will happen
-when you stop GitPod. To be safe, you should assume that you will lose
-your database when you stop your GitPod workspace.
+inside a GitHub codespace (a virtual machine).
 
-I guarantee you'll lose your database if you run `./down.bash` as it
+Do not run `./down.bash` before saving your data as it
 destroys the container running your DBMS.
 
 So to protect your data, I recommend that when you are done working,
@@ -90,3 +118,5 @@ follows:
     ./load.bash mydb.sql
 
 Now you are ready to continue your work.
+
+Try this now to ensure that it works. 
