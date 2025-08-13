@@ -1,4 +1,4 @@
-# Postgres
+# Postgres - Practice Assignment
 
 This file describes how to manipulate the
 Postgres server so that you can work through the
