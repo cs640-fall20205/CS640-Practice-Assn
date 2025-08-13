@@ -11,6 +11,7 @@ Postgres chapters in our text.
 2. In the terminal, navigate to the postgres directory:
 
     ```bash
+    cd src
     cd postgres
     ```
 
@@ -89,7 +90,7 @@ of your screen.
 
 After starting a new Postgres server, it will be
 empty. Assuming you saved the state of your database
-in `data.sql`, you can restore the currently empty
+in `trees.sql`, you can restore the currently empty
 server to this state as follows.
 
 ```bash
@@ -112,7 +113,7 @@ save and stop your workspace as follows:
     ./down.bash
     save-and-stop
 
-When you sit down to work again, start a new GitPod workspace, reposition
+When you sit down to work again, go to your repo on GitHub, reposition
 into `postgres/`, bring up your DBMS, and load it with your SQL file as
 follows:
 
