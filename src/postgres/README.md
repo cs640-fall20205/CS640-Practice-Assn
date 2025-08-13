@@ -6,7 +6,7 @@ Postgres chapters in our text.
 
 ## Starting and connecting to the Postgres server
 
-1. Open your personal repository.
+1. Open your personal repository via the link you have been provided.
 
 2. In the terminal, navigate to the postgres directory:
 
@@ -60,14 +60,14 @@ SELECT * FROM trees;
 10. Add two two trees of your choice to the database.
 11. Display the ```tree``` to ensure that you have correctly added your two trees. 
     
-When you are done interacting with the Postgres server, type `exit` or `\q`
+12. When you are done interacting with the Postgres server, type `exit` or `\q`
 to return to the bash prompt. This does not stop the server, it just
 disconnects you from the server. You can reconnect by running `./shell.bash`
 again.
 
 ## Saving the database state
 
-Assuming your Postgres server is running, and your terminal is still
+13. Save your databased. Assuming your Postgres server is running, and your terminal is still
 positioned in the `postgres/` directory, run the following...
 
 ```bash
@@ -77,10 +77,13 @@ positioned in the `postgres/` directory, run the following...
 This dumps the database into a file named `trees.sql`.
 
 ## Stopping and delete the Postgres server
-
+14. Stop the Postgres server
 ```bash
 ./down.bash
 ```
+
+15. Commit your changes by clicking the blue "Commit" button in the upper left portion
+of your screen.
 
 ## Loading the database state
 
@@ -119,4 +122,4 @@ follows:
 
 Now you are ready to continue your work.
 
-Try this now to ensure that it works. 
+16. Try this now to ensure that it works. 
